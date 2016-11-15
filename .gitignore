@@ -2,11 +2,11 @@
 node_modules/
 npm-debug.log
 typings/
-/build/*
+/dist/*
 .idea
 .publish
 *.iml
 **/*.orig
 /tmp/*
 !.gitkeep
-application.config.js.dist
+
