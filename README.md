@@ -1,7 +1,8 @@
 # React UI Kit
 
 UI Kit: Typescript + React
-Demo: MobX + React-router
+
+Demo: UI Kit + MobX + React-router
 
 ```
 npm install
