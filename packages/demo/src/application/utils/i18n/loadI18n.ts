@@ -3,7 +3,7 @@ import {template} from 'lodash'
 
 export function loadI18n(bundleLoader): Promise<I18n> {
 
-  return new Promise((resolve, reject) => {
+  return new Promise((resolve) => {
     bundleLoader(module_i18n => {
       const dict = module_i18n.default
 
@@ -20,6 +20,8 @@ export function loadI18n(bundleLoader): Promise<I18n> {
           } else {
             return cache[key] as string
           }
+        } else {
+          return key
         }
       }
 

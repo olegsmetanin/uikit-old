@@ -1,27 +1,26 @@
 import {IEvent} from 'application/api/event/IEvent';
 import {IEventBus} from 'application/api/event/IEventBus';
-let EventEmitter = require('eventemitter3')
-// import * as EventEmitter from 'eventemitter3';
+import {EventEmitter} from 'eventemitter3';
 
 export class EventBus implements IEventBus {
 
-  on: <T extends IEvent>(type: string, fn: (T) => void) => this
-  off: <T extends IEvent>(type: string, fn: (T) => void) => this
-  emit: <T extends IEvent>(type: string, value: T) => boolean
+  on: <T extends IEvent>(type: string, fn: (event: T) => void) => IEventBus
+  off: <T extends IEvent>(type: string, fn: (event: T) => void) => IEventBus
+  emit: <T extends IEvent>(type: string, event: T) => boolean
 
   constructor() {
     var eventBus = new EventEmitter()
 
     this.on = function (type: string, fn: Function) {
-      return eventBus.on(type, fn)
+      return eventBus.on(type, fn as EventEmitter.ListenerFn)
     }
 
-    this.off = function (type: string, fn: (T) => void) {
-      return eventBus.off(type, fn)
+    this.off = function (type: string, fn: Function) {
+      return eventBus.off(type, fn as EventEmitter.ListenerFn)
     }
 
-    this.emit =  function (type: string, value: any) {
-      return eventBus.emit(type, value)
+    this.emit =  function (type: string, event: any) {
+      return eventBus.emit(type, event)
     }
   }
 

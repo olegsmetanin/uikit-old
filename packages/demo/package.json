@@ -18,7 +18,7 @@
         "lint"
     ],
     "dependencies": {
-        "@olegsmetanin/uikit": "0.0.1",
+        "@olegsmetanin/uikit": "^0.0.1",
         "@types/eventemitter3": "1.1.29",
         "@types/lodash": "4.14.36",
         "async-module-loader": "1.3.0",

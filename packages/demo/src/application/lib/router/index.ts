@@ -3,7 +3,6 @@
 
 import {
   IndexRoute,
-  IRouter,
   Link,
   hashHistory,
   Router,
@@ -13,7 +12,6 @@ import {
 
 export {
   IndexRoute,
-  IRouter,
   Link,
   hashHistory,
   Router,

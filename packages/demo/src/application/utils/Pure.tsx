@@ -1,5 +1,5 @@
 import * as React from 'react'
-const PureRenderMixin = require('react-addons-pure-render-mixin')
+import * as PureRenderMixin from 'react-addons-pure-render-mixin'
 
 export const Pure = ComposedComponent => class PureHOC extends React.Component<any, any> {
   constructor(props, context) {
