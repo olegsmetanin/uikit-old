@@ -3,8 +3,8 @@ import * as React from 'react'
 /* tslint:disable:no-unused-variable */
 
 import {render} from 'react-dom'
-import {hashHistory} from 'application/lib/router'
-import {Router} from 'application/lib/router'
+import {hashHistory} from 'lib/router'
+import {Router} from 'lib/router'
 import {routes} from 'application/routes'
 
 require('./styles/scss/styles.scss')

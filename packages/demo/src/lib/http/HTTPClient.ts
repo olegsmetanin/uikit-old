@@ -1,5 +1,5 @@
-import {IHTTPClient, IHTTPRequest} from 'application/api/http/IHTTPClient'
-import {HTTPError, AuthenticationRequiredError, ConnectionBrokenError} from 'application/api/http/Errors'
+import {IHTTPClient, IHTTPRequest} from 'api/http/IHTTPClient'
+import {HTTPError, AuthenticationRequiredError, ConnectionBrokenError} from 'api/http/Errors'
 
 require('whatwg-fetch')
 const fetch = window['fetch']
@@ -46,6 +46,7 @@ export class HTTPClient implements IHTTPClient {
   }
 
   tryExtractJson(response) {
+
     return new Promise((resolve) => {
       // First check content-type
       if (response.headers.has('Content-Type') && !/\/json/g.test(response.headers.get('Content-Type'))) {

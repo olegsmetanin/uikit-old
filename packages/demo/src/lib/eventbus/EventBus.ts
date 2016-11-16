@@ -1,5 +1,5 @@
-import {IEvent} from 'application/api/event/IEvent';
-import {IEventBus} from 'application/api/event/IEventBus';
+import {IEvent} from 'api/event/IEvent';
+import {IEventBus} from 'api/event/IEventBus';
 import {EventEmitter} from 'eventemitter3';
 
 export class EventBus implements IEventBus {

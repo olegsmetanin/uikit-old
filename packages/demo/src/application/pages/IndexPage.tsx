@@ -1,14 +1,39 @@
 import * as React from 'react'
+import {observable, observer} from 'lib/Reactive'
+import {Container} from 'components'
+
+
+export interface IIndexPageProps {
+}
 
 /**
- * 404 page for not existing routes
+ * Index page
  */
-export class IndexPage extends React.Component<void, void> {
+@observer
+export class IndexPage extends React.Component<IIndexPageProps, void> {
+
+  @observable
+  layoutWidth: number
+
+  onLayoutWidthChange = (newLayoutWidth) => {
+    this.layoutWidth = newLayoutWidth
+  }
 
   render() {
     return (
       <div>
-        Index
+        Index Page
+        <div>
+      <Container
+        width={this.layoutWidth}
+        onChangeWidth={this.onLayoutWidthChange}
+        className={'layout'}
+      >
+        Container width: {this.layoutWidth}
+
+      </Container>
+
+        </div>
       </div>
     )
   }

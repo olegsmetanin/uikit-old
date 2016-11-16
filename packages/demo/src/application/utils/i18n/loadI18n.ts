@@ -1,4 +1,4 @@
-import {I18n} from 'application/api/i18n/I18n'
+import {I18n} from 'api/i18n/I18n'
 import {template} from 'lodash'
 
 export function loadI18n(bundleLoader): Promise<I18n> {
