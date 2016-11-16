@@ -73,7 +73,6 @@ gulp.task('compile', function(done) {
 });
 
 gulp.task('incr_compile', function() {
-    process.env.NODE_ENV = 'production';
     var webpackConfig = require('./webpack.config.js');
     webpackConfig.watch = true;
     webpack(webpackConfig, function(err, stats) {
