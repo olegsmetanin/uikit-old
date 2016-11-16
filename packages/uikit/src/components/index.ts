@@ -1,4 +1,5 @@
-//// <reference path="./components.d.ts" />
+
+require('./styles/scss/styles.scss')
 
 export * from './ClickOutside/ClickOutside'
 export * from './Container/Container'
