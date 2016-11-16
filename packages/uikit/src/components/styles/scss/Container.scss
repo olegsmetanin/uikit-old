@@ -1,2 +1,3 @@
-
-.samplestyle { @include border-top-radius(10px) }
+.container_style {
+    @include border-top-radius(10px)
+}
