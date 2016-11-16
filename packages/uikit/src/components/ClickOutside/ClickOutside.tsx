@@ -4,7 +4,6 @@ import {rest} from '../utils/rest'
 export class ClickOutside extends React.Component<{except?: HTMLElement, onClickOutside: (e) => void}, void> {
 
   wrapper: HTMLElement
-
   componentDidMount() {
     document.addEventListener('click', this.handle, true)
   }

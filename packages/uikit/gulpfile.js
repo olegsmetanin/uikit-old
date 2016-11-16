@@ -72,6 +72,18 @@ gulp.task('compile', function(done) {
     });
 });
 
+gulp.task('incr_compile', function() {
+    process.env.NODE_ENV = 'production';
+    var webpackConfig = require('./webpack.config.js');
+    webpackConfig.watch = true;
+    webpack(webpackConfig, function(err, stats) {
+        if (err) throw new gutil.PluginError('webpack', err);
+        gutil.log('[webpack]', stats.toString({
+            // output options
+        }));
+    });
+});
+
 gulp.task('rundevserver', function() {
     require('./devserver.js');
 });
@@ -82,6 +94,10 @@ gulp.task('run', function(done) {
 
 gulp.task('build', function(done) {
     runSequence('clean', ['copy', 'compile'], done);
+});
+
+gulp.task('watch', function(done) {
+    runSequence('clean', ['copy', 'incr_compile'], done);
 });
 
 gulp.task('default', ['build']);

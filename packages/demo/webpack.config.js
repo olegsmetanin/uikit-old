@@ -12,15 +12,14 @@ var path = require('path'),
 
 var config = {
     entry: {
-        index: (isProduction ? [] : ['webpack-hot-middleware/client?http://localhost:' + PORT])
+        app: (isProduction ? [] : ['webpack-hot-middleware/client?http://localhost:' + PORT])
             .concat([path.resolve(__dirname, './src/application/index.tsx')]),
-        components: (isProduction ? [] : ['webpack-hot-middleware/client?http://localhost:' + PORT])
-            .concat([path.resolve(__dirname, './src/components/index.ts')]),
         lib: ['react', 'react-dom', 'react-router', 'mobx', 'mobx-react', 'moment', 'jsonschema']
     },
     output: {
         path: path.join(__dirname, './dist'),
-        filename: '[name].js'
+        filename: 'js/[name].js',
+        publicPath: ''
     },
     module: {
         preLoaders: [{
@@ -100,7 +99,7 @@ var config = {
         ]
     },
 
-    sassResources: ['./src/styles/scss/common.scss'],
+    sassResources: ['./src/application/styles/scss/common.scss'],
 
     postcss: function() {
         return [autoprefixer({ browsers: ['last 2 versions'] })];
@@ -121,7 +120,7 @@ var config = {
                 warnings: true
             }
         }),
-        new ExtractTextPlugin('./styles/css/uikit.css', { allChunks: true, publicPath: '/styles/css' })
+        new ExtractTextPlugin('./css/app.css', { allChunks: true, publicPath: '/css' })
     ] : [])
 };
 

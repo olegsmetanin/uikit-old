@@ -7,7 +7,7 @@ import {hashHistory} from 'application/lib/router'
 import {Router} from 'application/lib/router'
 import {routes} from 'application/routes'
 
-// require('./styles/styles.scss')
+require('./styles/scss/styles.scss')
 
 window['app'] = (options: any) => {
 

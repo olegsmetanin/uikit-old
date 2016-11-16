@@ -13,7 +13,7 @@ var gulp = require('gulp'),
 process.env.NODE_ENV = 'development';
 
 gulp.task('clean', function() {
-    return gulp.src(['build']).pipe(clean());
+    return gulp.src(['dist']).pipe(clean());
 });
 
 gulp.task('jshint', function() {
@@ -57,7 +57,7 @@ gulp.task('lint', function(done) {
 });
 
 gulp.task('copy', function() {
-    return gulp.src(['./src/components/styles/**/*']).pipe(gulp.dest('dist/styles'));
+    return gulp.src(['webpublic/**/*']).pipe(gulp.dest('dist'));
 });
 
 gulp.task('compile', function(done) {

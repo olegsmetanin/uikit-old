@@ -12,7 +12,8 @@
         "prestart": "npm prune && npm install",
         "start": "gulp run",
         "lint": "gulp lint",
-        "test": "webpack --config webpack.test.unit.config.js && tape ./build/test/unit.js"
+        "test": "webpack --config webpack.test.unit.config.js && tape ./build/test/unit.js",
+        "watch": "gulp watch"
     },
     "pre-commit": [
         "lint"

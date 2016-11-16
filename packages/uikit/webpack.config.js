@@ -127,7 +127,7 @@ var config = {
                 warnings: true
             }
         }),
-        new ExtractTextPlugin('./styles/css/uikit.css', { allChunks: true, publicPath: '/styles/css' })
+        new ExtractTextPlugin('./css/uikit.css', { allChunks: true, publicPath: '/css' })
     ] : [])
 };
 

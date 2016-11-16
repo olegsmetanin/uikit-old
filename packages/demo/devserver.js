@@ -12,7 +12,7 @@ var webpack = require('webpack'),
     compiler = webpack(config),
     wdm = webpackDevMiddleware(compiler, { noInfo: true, stats: { chunks: false } }),
     whm = webpackHotMiddleware(compiler, {}),
-    ws = express.static('./build');
+    ws = express.static('./dist');
 
 app.use(wdm);
 app.use(whm);

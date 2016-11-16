@@ -2,7 +2,9 @@
     "scripts": {
         "bootstrap": "lerna bootstrap",
         "build:uikit": "(cd packages/uikit; npm run build)",
-        "build:demo": "(cd packages/demo; npm run build)"
+        "build:demo": "(cd packages/demo; npm run build)",
+        "watch:uikit": "(cd packages/uikit; npm run watch)",
+        "run:demo": "(cd packages/demo; npm run start)"
     },
     "dependencies": {
         "@types/assertion-error": "1.0.30",
