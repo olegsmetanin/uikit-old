@@ -1,7 +1,6 @@
 {
     "name": "@olegsmetanin/uikit",
     "version": "0.0.1",
-    "private": true,
     "repository": "olegsmetanin/uikit",
     "main": "dist/index.js",
     "typings": "dist/lib/index.d.ts",
